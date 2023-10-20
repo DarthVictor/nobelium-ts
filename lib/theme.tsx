@@ -9,7 +9,7 @@ export function ThemeProvider ({ children }: { children: ReactNode }) {
 
   // `defaultState` should normally be a boolean. But it causes initial loading flashes in slow
   // rendering. Setting it to `null` so that we can differentiate the initial loading phase
-  const prefersDark = useMedia('(prefers-color-scheme: dark)', undefined)
+  const prefersDark = useMedia('(prefers-color-scheme: dark)', false)
   const dark = appearance === 'dark' || (appearance === 'auto' && prefersDark)
 
   useEffect(() => {
